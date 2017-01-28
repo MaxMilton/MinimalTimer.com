@@ -1,7 +1,7 @@
 <template>
   <nav class="mainmenu">
-    <a @click="go" href="/" class="nav-link">home</a>
-    <a @click="go" href="/about" class="nav-link">about</a>
+    <a @click="go" href="/" class="nav-link">Home</a>
+    <a @click="go" href="/about" class="nav-link">About</a>
 
     <!-- FIXME: Remove this, DEV ONLY! -->
     <a @click="go" href="/404" class="nav-link">404</a>
@@ -22,4 +22,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.mainmenu {
+  margin-bottom: 1rem;
+}
+</style>

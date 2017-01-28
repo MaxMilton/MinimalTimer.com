@@ -14,12 +14,12 @@ const app = new Vue({
     currentRoute: window.location.pathname,
   },
   computed: {
-    ViewComponent() {
+    viewComponent() {
       return routes[this.currentRoute] || NotFound;
     },
   },
   render(h) {
-    return h(this.ViewComponent);
+    return h(this.viewComponent);
   },
 });
 
