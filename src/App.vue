@@ -7,9 +7,10 @@
     <p>Time left: {{ humanReadableTime(remainingTime) }}</p>
     <p>Cycles left: {{ remainingCycles }}</p>
 
-    <button @click="start" type="button" class="btn-start">Start</button>
-    <button @click="pause" type="button" class="btn-pause">Pause</button>
-    <button @click="restart" type="button" class="btn-restart">Restart</button>
+    <button v-if="status !== 'running'" @click="start" type="button" class="btn-start">Start</button>
+    <button v-if="status === 'running'" @click="pause" type="button" class="btn-pause">Pause</button>
+    <button v-if="status === 'running' || status === 'paused'" @click="restart" type="button" class="btn-restart">Reset timer</button>
+    <!-- <button @click="" type="button" class="btn-continue">Continue</button> -->
 
     <p>Status: {{ status }}</p>
 
@@ -33,28 +34,37 @@ export default {
   },
   data() {
     return {
-      timerLength: 1500, // seconds = 25 minutes
+      timerLength: 5, // seconds = 25 minutes
       cycles: 4,
       shortBreak: 300, // seconds = 5 minutes
       longBreak: 1800, // seconds = 30 minutes
       // audio: true,
       // notifications: true,
+      // autoContinue: false,
       remainingTime: 0,
       remainingPercent: 100,
       remainingCycles: 0,
       status: 'waiting',
     };
   },
+  computed: {
+  },
   methods: {
+    takeBreak(breakLength) {
+      console.log(`${breakLength} BREAK TIME!`); // eslint-disable-line
+    },
     humanReadableTime(seconds) {
       // TODO: Singluar noun for 1 minute and 1 second
       return seconds < 60 ? `${seconds} seconds` : `${Math.trunc(seconds / 60)} minutes ${seconds % 60} seconds`;
     },
     finished() {
-      if (this.remainingCycles === 0) {
-        // Do something
+      if (this.remainingCycles < 1) {
+        this.takeBreak('long');
+        this.restart();
       } else {
         this.remainingCycles -= 1;
+        this.restart();
+        this.takeBreak('short');
 
         // Do something else
       }
@@ -63,13 +73,13 @@ export default {
       if (this.status !== 'running') {
         this.status = 'running';
 
-        if (this.remainingTime === 0) this.finished();
-
         // Count down every second
         // TODO: Test this is acurate - otherwise calculate the time passed with Date.now
         this.timer = window.setInterval(() => {
           this.remainingTime -= 1;
           this.remainingPercent = Math.trunc((this.remainingTime / this.timerLength) * 100);
+
+          if (this.remainingTime < 1) this.finished();
         }, 1000); // ms
       }
     },
