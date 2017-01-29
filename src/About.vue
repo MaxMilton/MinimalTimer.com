@@ -21,6 +21,10 @@
     <h2>Technical overview</h2>
     <p>
       Tech info.
+
+      fully self contained
+      offline support
+      progressive web app
     </p>
 
     <ul>
@@ -32,6 +36,7 @@
 </template>
 
 <script>
+import common from './common';
 import Mainmenu from './components/Mainmenu';
 
 export default {
@@ -39,9 +44,14 @@ export default {
   components: {
     Mainmenu,
   },
+  mounted() {
+    common.changePageColour('blue-grey');
+  },
 };
 </script>
 
 <style lang="scss">
 // @import "scss/variables";
+//
+// #app {}
 </style>

@@ -27,6 +27,10 @@ module.exports = {
       'js': 'never',
       'vue': 'never'
     }],
+    // seems fine to me...
+    'no-unused-expressions': ['error', {
+      "allowTernary": true
+    }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }

@@ -8,12 +8,23 @@ const routes = {
   '/about': About,
 };
 
+
 const app = new Vue({
   el: '#app',
-  data() {
-    return {
-      currentRoute: window.location.pathname,
-    };
+  data: {
+    currentRoute: window.location.pathname,
+    // audio: true,
+    // notifications: true,
+    // autoContinue: false,
+    // cycles: 4,
+    // timerLength: 1500,   // seconds = 25 minutes
+    // shortBreak: 300,  // seconds = 5 minutes
+    // longBreak: 1800,  // seconds = 30 minutes
+    // remainingTime: 0,
+    // remainingPercent: 100,
+    // remainingCycles: 0,
+    // status: '',       // Shown in UI
+    // state: 'init',    // Used internally
   },
   computed: {
     viewComponent() {

@@ -1,16 +1,25 @@
 <template>
-  <nav class="mainmenu">
-    <a @click="go" href="/" class="nav-link">Home</a>
-    <a @click="go" href="/about" class="nav-link">About</a>
+  <nav>
+    <a v-if="!isHome" @click="go" href="/" class="nav-link">Home</a>
+    <a v-if="!isAbout" @click="go" href="/about" class="nav-link">About</a>
+    <a @click="settings" href="#" class="nav-link nav-settings">Settings</a>
 
     <!-- FIXME: Remove this, DEV ONLY! -->
-    <a @click="go" href="/404" class="nav-link">404</a>
+    <a href="/404" class="nav-link">404</a>
   </nav>
 </template>
 
 <script>
 export default {
   name: 'mainmenu',
+  computed: {
+    isHome() {
+      return this.$root.currentRoute === '/';
+    },
+    isAbout() {
+      return this.$root.currentRoute === '/about';
+    },
+  },
   methods: {
     go(event) {
       event.preventDefault();
@@ -18,12 +27,29 @@ export default {
       this.$root.currentRoute = href;
       window.history.pushState(null, '', href);
     },
+    settings(event) {
+      event.preventDefault();
+      this.$emit('toggleSettings');
+    },
   },
 };
 </script>
 
-<style>
-.mainmenu {
-  margin-bottom: 1rem;
+<style lang="scss">
+@import "../scss/variables";
+
+nav {
+  position: absolute;
+  display: block;
+  background: $white;
+  bottom: 0;
+  padding: 0 1rem;
+}
+
+.nav-link {
+  color: $deep-grey;
+  padding: 1rem;
+  display: inline-block;
+  text-decoration: none;
 }
 </style>

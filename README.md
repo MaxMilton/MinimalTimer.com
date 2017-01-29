@@ -36,7 +36,7 @@ npm test
 
 ## Licence
 
-Site is licensed GNU LGPLv3, see [LICENCE.md](https://github.com/MaxMilton/MinimalTimer.com/blob/master/themes/mm/LICENSE.md).
+Code is licensed GNU LGPLv3, see [LICENCE.md](https://github.com/MaxMilton/MinimalTimer.com/blob/master/themes/mm/LICENSE.md).
 
 ## Author
 
