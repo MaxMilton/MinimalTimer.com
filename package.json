@@ -63,7 +63,7 @@
     "nightwatch": "0.9.12",
     "node-sass": "4.4.0",
     "opn": "4.0.2",
-    "ora": "0.3.0",
+    "ora": "0.4.1",
     "phantomjs-prebuilt": "2.1.16",
     "sass-lint": "1.12.1",
     "sass-loader": "4.1.1",
