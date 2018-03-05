@@ -68,7 +68,7 @@
     "sass-lint": "1.12.1",
     "sass-loader": "4.1.1",
     "selenium-server": "2.53.1",
-    "semver": "5.3.0",
+    "semver": "5.5.0",
     "shelljs": "0.7.6",
     "sinon": "1.17.7",
     "sinon-chai": "2.8.0",
