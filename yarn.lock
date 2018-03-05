@@ -3812,11 +3812,11 @@ karma-phantomjs-launcher@1.0.4:
     lodash "^4.0.1"
     phantomjs-prebuilt "^2.1.7"
 
-karma-sinon-chai@1.2.4:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/karma-sinon-chai/-/karma-sinon-chai-1.2.4.tgz#fea935f62be3366cf0271c8d8be51c0c70e40abc"
+karma-sinon-chai@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/karma-sinon-chai/-/karma-sinon-chai-1.3.3.tgz#a597e5b4a1369fe7b3d7d76c09ed2061a38e747f"
   dependencies:
-    lolex "^1.5.0"
+    lolex "^1.6.0"
 
 karma-sourcemap-loader@0.3.7:
   version "0.3.7"
@@ -4127,13 +4127,9 @@ lolex@1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/lolex/-/lolex-1.3.2.tgz#7c3da62ffcb30f0f5a80a2566ca24e45d8a01f31"
 
-lolex@1.6.0:
+lolex@1.6.0, lolex@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/lolex/-/lolex-1.6.0.tgz#3a9a0283452a47d7439e72731b9e07d7386e49f6"
-
-lolex@^1.5.0:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/lolex/-/lolex-1.5.2.tgz#94a4ce41c61185a05e98b8660dc509423ac1c416"
 
 longest@^1.0.1:
   version "1.0.1"
