@@ -1,16 +1,6 @@
-# MinimalTimer.com
+# minimaltimer.com
 
-> TODO: Write a decent README
-
-A simple project combining many of my favorite technologies including:
-
-* Vue.js
-* Babel ES6/ES7
-* Webpack
-* CSS3 animations
-* Node.js + Express
-* Docker
-* Alpine Linux
+> A Vue.js project
 
 ## Build Setup
 
@@ -24,6 +14,9 @@ npm run dev
 # build for production with minification
 npm run build
 
+# build for production and view the bundle analyzer report
+npm run build --report
+
 # run unit tests
 npm run unit
 
@@ -34,10 +27,4 @@ npm run e2e
 npm test
 ```
 
-## Licence
-
-Code is licensed GNU LGPLv3, see [LICENCE.md](https://github.com/MaxMilton/MinimalTimer.com/blob/master/themes/mm/LICENSE.md).
-
-## Author
-
-Proudly made by Max Milton &lt;<max@wearegenki.com>&gt;.
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -4,8 +4,8 @@
     <a v-if="!isAbout" @click="go" href="/about" class="nav-link">About</a>
     <a @click="settings" href="#" class="nav-link nav-settings">Settings</a>
 
-    <!-- FIXME: Remove this, DEV ONLY! -->
-    <a href="/404" class="nav-link">404</a>
+    <!-- FIXME: REMOVE, DEV ONLY! -->
+    <!-- <a href="/404" class="nav-link">404</a> -->
   </nav>
 </template>
 

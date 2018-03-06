@@ -2,36 +2,30 @@
   <div id="app">
     <mainmenu></mainmenu>
 
-    <h1>About</h1>
-    <p>
-      Overview.
+    <div class="page">
+      <h1>About MinimalTimer.com</h1>
+      <p>
+        Overview.
+      </p>
 
-      <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">wikipedia.org/wiki/Pomodoro_Technique</a>
-    </p>
 
-    <ol>
-      <li>Decide on the task to be done.</li>
-      <li>Set the pomodoro timer (traditionally to 25 minutes).</li>
-      <li>Work on the task until the timer rings. If a distraction pops into your head, write it down, but immediately get back on task.</li>
-      <li>After the timer rings, put a checkmark on a piece of paper.</li>
-      <li>If you have fewer than four checkmarks, take a short break (3–5 minutes), then go to step 1.</li>
-      <li>After four pomodoros, take a longer break (15–30 minutes), reset your checkmark count to zero, then go to step 1.</li>
-    </ol>
+      <h2>The Pomodoro Technique</h2>
+      <ol>
+        <li>Decide on the task to be done.</li>
+        <li>Set the timer (traditionally to 25 minutes).</li>
+        <li>Work on the task until the timer rings. If a distraction pops into your head, write it down, but immediately get back on task.</li>
+        <li>After the timer rings, take a short break (3–5 minutes), then go to step 1.</li>
+        <li>After four short breaks, take a longer break (15–30 minutes), reset your break count to zero, then go to step 1.</li>
+      </ol>
+      <p>
+        More info: <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">wikipedia.org/wiki/Pomodoro_Technique</a>
+      </p>
 
-    <h2>Technical overview</h2>
-    <p>
-      Tech info.
+      <h2>Technical overview</h2>
+      <p>Full source code for this website is availiable at: <a href="https://github.com/MaxMilton/MinimalTimer.com"> https://github.com/MaxMilton/MinimalTimer.com</a>.</p>
 
-      fully self contained
-      offline support
-      progressive web app
-    </p>
-
-    <ul>
-      <li>
-        open source, link to repo
-      </li>
-    </ul>
+      <p>&copy; <a href="https://maxmilton.com">Max Milton</a></p>
+    </div>
   </div>
 </template>
 
@@ -51,7 +45,24 @@ export default {
 </script>
 
 <style lang="scss">
-// @import "scss/variables";
-//
+@import "scss/variables";
+
+// FIXME: Fix colour flash when changing from home to about page
+// FIXME: Background colour doesn't extend beyond initial screen size (can't read when scrolling)
+
 // #app {}
+
+li {
+  margin-bottom: .7rem;
+}
+
+.page {
+  padding: 3rem 18rem 0;
+
+  @media (max-width: $small) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 </style>

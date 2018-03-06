@@ -1,8 +1,13 @@
+// http://eslint.org/docs/user-guide/configuring
+
 module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
+  },
+  env: {
+    browser: true,
   },
   extends: 'airbnb-base',
   // required to lint *.vue files
@@ -17,9 +22,6 @@ module.exports = {
       }
     }
   },
-  'env': {
-    'browser': true
-  },
   // add your custom rules here
   'rules': {
     // don't require .vue extension when importing
@@ -27,9 +29,9 @@ module.exports = {
       'js': 'never',
       'vue': 'never'
     }],
-    // seems fine to me...
-    'no-unused-expressions': ['error', {
-      "allowTernary": true
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      'optionalDependencies': ['test/unit/index.js']
     }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
