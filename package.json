@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "node-sass": "4.7.2",
+    "node-sass": "4.8.0",
     "sass-loader": "6.0.7",
     "vue": "2.5.14"
   },
