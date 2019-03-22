@@ -68,7 +68,8 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@minna-ui/eslint-config"
+      "@minna-ui/eslint-config",
+      "@minna-ui/eslint-config/lib/node-ts"
     ]
   },
   "stylelint": {

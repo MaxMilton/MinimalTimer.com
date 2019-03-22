@@ -17,7 +17,7 @@ export default {
     file: 'dist/t.js',
     format: 'esm',
     // name: 't', // "timer"
-    // sourcemap: true,
+    sourcemap: true,
   },
   plugins: [
     postcss(),
