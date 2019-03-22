@@ -1,0 +1,20 @@
+{
+  "css.validate": false,
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "eslint.validate": [
+    { "language": "html", "autoFix": true },
+    { "language": "javascript", "autoFix": true },
+    { "language": "markdown", "autoFix": true },
+    { "language": "typescript", "autoFix": true }
+  ],
+  "files.associations": {
+    "*.css": "scss",
+  },
+  "files.eol": "\n",
+  "javascript.implicitProjectConfig.checkJs": true,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "scss.validate": false,
+  "stylelint.enable": true
+}

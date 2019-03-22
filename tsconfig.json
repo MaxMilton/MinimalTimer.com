@@ -1,0 +1,19 @@
+// https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+
+{
+  "extends": "@minna-ui/ts-config",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "importHelpers": true,
+    "outDir": "dist",
+    "target": "esnext"
+  },
+  "exclude": [
+    "**/__tests__/*",
+    "**/.*rc.js",
+    "**/*.config.js",
+    "**/node_modules/*",
+    "dist/*",
+    "test/coverage"
+  ]
+}

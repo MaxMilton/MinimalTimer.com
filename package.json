@@ -1,0 +1,102 @@
+{
+  "private": true,
+  "name": "minimaltimer.com",
+  "version": "0.0.0",
+  "description": "A minimal pomodoro timer.",
+  "author": "Max Milton <max@wearegenki.com>",
+  "scripts": {
+    "dev": "NODE_ENV=development rollup --config --watch",
+    "build": "NODE_ENV=production rollup --config",
+    "prebuild": "rm -rf dist && cp -r static dist",
+    "serve": "sirv start dist --dev --cors",
+    "lint": "yarn lint:md && yarn lint:css && yarn lint:js && yarn lint:types",
+    "lint:md": "remark --frail --quiet .",
+    "lint:css": "stylelint --ignore-path .gitignore '**/*.{css,html,js,md,ts}'",
+    "lint:js": "eslint --ignore-path .gitignore --ext html,js,md,ts .",
+    "lint:types": "tsc --noEmit",
+    "test": "yarn lint && JEST_CIRCUS=1 jest --notify --watch",
+    "test-ci": "JEST_CIRCUS=1 jest --coverage --runInBand --ci"
+  },
+  "dependencies": {
+    "stage0": "0.0.19",
+    "todomvc-app-css": "2.2.0",
+    "todomvc-common": "1.0.5"
+  },
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "0.8.5",
+    "@minna-ui/eslint-config": "0.22.0-next.193",
+    "@minna-ui/jest-config": "0.22.0-next.193",
+    "@minna-ui/postcss-config": "0.22.0-next.193",
+    "@minna-ui/prettier-config": "0.22.0-next.193",
+    "@minna-ui/remark-config": "0.22.0-next.193",
+    "@minna-ui/rollup-plugins": "0.22.0-next.193",
+    "@minna-ui/stylelint-config": "0.22.0-next.193",
+    "@minna-ui/ts-config": "0.22.0-next.193",
+    "@wearegenki/renovate-config": "1.0.0",
+    "codecov": "3.2.0",
+    "eslint": "5.15.3",
+    "jest": "24.5.0",
+    "postcss": "7.0.14",
+    "prettier": "1.16.4",
+    "remark-cli": "6.0.1",
+    "rollup": "1.7.0",
+    "rollup-plugin-minifyliterals": "1.1.0",
+    "rollup-plugin-node-resolve": "4.0.1",
+    "rollup-plugin-typescript": "1.0.0",
+    "sirv-cli": "0.2.3",
+    "stylelint": "9.10.1",
+    "tslib": "1.9.3",
+    "typescript": "3.3.4000"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "babel": {
+    "presets": [
+      "@minna-ui/jest-config/lib/babel-preset"
+    ]
+  },
+  "postcss": {
+    "map": true,
+    "syntax": "postcss-scss",
+    "plugins": {
+      "@minna-ui/postcss-config": {
+        "unsafe": true
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@minna-ui/eslint-config",
+      "@minna-ui/eslint-config/lib/node-ts"
+    ]
+  },
+  "stylelint": {
+    "extends": "@minna-ui/stylelint-config"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "@minna-ui/remark-config"
+    ]
+  },
+  "jest": {
+    "preset": "@minna-ui/jest-config"
+  },
+  "renovate": {
+    "extends": [
+      "@wearegenki"
+    ]
+  },
+  "engines": {
+    "node": ">11.0.0",
+    "yarn": ">1.12.0"
+  },
+  "os": [
+    "!win32",
+    "darwin",
+    "freebsd",
+    "linux",
+    "openbsd"
+  ]
+}
